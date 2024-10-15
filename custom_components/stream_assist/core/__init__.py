@@ -188,7 +188,7 @@ def play_media(hass: HomeAssistant, entity_id: str, media_id: str, media_type: s
     service_data = {
         "entity_id": entity_id,
         "media_content_id": media_player.async_process_play_media_url(hass, media_id),
-        "media_content_type": media_type,
+        "media_content_type": "track", # Hardcoded assuming only Sonos speakers will be used (also 'music' is supported)
     }
 
     # hass.services.call will block Hass
